@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.net.URI;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,7 +21,7 @@ public class PodcastInput {
                         @JsonProperty("tags") List<URI> tagUris) {
         this.title = title;
         this.description = description;
-        this.tagUris = tagUris;
+        this.tagUris = tagUris == null ? Collections.emptyList() : tagUris;;
     }
 
     public String getTitle() {
